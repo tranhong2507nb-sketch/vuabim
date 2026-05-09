@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/**
+ * VUA BỈM — Bảng màu UI
+ * Color palette theo §3 NGUYÊN TẮC THIẾT KẾ + bảng màu đã chốt 2026-05-08.
+ *
+ * Cách dùng trong code Tailwind:
+ *   bg-primary, bg-primary-dark, bg-primary-light
+ *   bg-cta, bg-cta-hover, bg-cta-bg
+ *   bg-secondary, text-secondary
+ *   bg-reward, text-reward
+ *   bg-background, bg-card, bg-section-soft
+ *   text-foreground, text-muted, text-subtle
+ *   text-status-instock, text-status-out, text-status-pending, ...
+ */
+
+@theme {
+  /* === MÀU CHỦ ĐẠO — Mint/Teal === */
+  --color-primary: #22C7C9;
+  --color-primary-dark: #0891B2;
+  --color-primary-light: #DFFBFA;
+
+  /* === CTA chính (mua/đặt/xác nhận) — Teal đậm === */
+  --color-cta: #0891B2;
+  --color-cta-hover: #0E7490;
+  --color-cta-bg: #E0F7FA;
+
+  /* === MÀU PHỤ — Hồng baby === */
+  --color-secondary: #FF7EB6;
+  --color-secondary-light: #FFE6F1;
+  --color-secondary-dark: #BE185D;
+
+  /* === MÀU ĐIỂM/QUÀ === */
+  --color-reward: #FFC83D;
+  --color-reward-light: #FFF4CC;
+
+  /* === MÀU NỀN === */
+  --color-background: #FFF8F1;
+  --color-card: #FFFFFF;
+  --color-section-soft: #F8FFFF;
+
+  /* === MÀU CHỮ === */
+  --color-foreground: #1F2937;
+  --color-muted: #6B7280;
+  --color-subtle: #9CA3AF;
+
+  /* === MÀU TRẠNG THÁI === */
+  --color-status-instock: #22C55E;
+  --color-status-out: #EF4444;
+  --color-status-pending: #F59E0B;
+  --color-status-completed: #10B981;
+  --color-status-cancelled: #9CA3AF;
+
+  /* === Font === */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base styles */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Tap target tối thiểu 44px theo §3.1 mobile-first */
+@layer utilities {
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
